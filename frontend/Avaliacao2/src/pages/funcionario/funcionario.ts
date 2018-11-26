@@ -30,10 +30,6 @@ export class FuncionarioPage {
   });
   }
 
-  getContas($event){
-
-  }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad FuncionarioPage');
   }

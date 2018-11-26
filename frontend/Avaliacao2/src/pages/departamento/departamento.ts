@@ -31,10 +31,6 @@ export class DepartamentoPage {
   });
   }
 
-  getFuncionarios($event){
-
-  }
-
   funcionarioSelected(idFuncionario: number){
     this.navCtrl.push('FuncionarioPage', {
       idDepartamento: this.navParams.get('idDepartamento'),

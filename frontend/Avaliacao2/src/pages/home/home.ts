@@ -22,10 +22,6 @@ export class HomePage {
   });
   }
 
-  getDepartamentos($event){
-
-  }
-
   departamentoSelected(id: number){
     this.navCtrl.push('DepartamentoPage', {
       idDepartamento: id

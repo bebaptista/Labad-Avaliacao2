@@ -14,11 +14,12 @@
 
 
 <ion-content padding>
-    <ion-searchbar (ionInput)="getContas($event)"></ion-searchbar>
     <ion-list inset>
         <ion-item *ngFor="let conta of currentContas">
-            <h2>{{ conta.ACCOUNT_ID }}</h2>
-            <h3>{{ conta.AVAIL_BALANCE }}</h3>
+            <h2>{{ conta.account_id }}</h2>
+            <h3>Saldo: R${{ conta.avail_balance }}</h3>
+            <h3 *ngIf="conta.cust_type_cd=='I'">{{ conta.first_name}} {{conta.last_name}}</h3>
+            <h3 *ngIf="conta.cust_type_cd=='B'">{{ conta.first_name}}</h3>
         </ion-item>
     </ion-list>
 </ion-content>

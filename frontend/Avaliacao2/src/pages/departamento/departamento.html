@@ -14,10 +14,11 @@
 
 
 <ion-content padding>
-    <ion-searchbar (ionInput)="getFuncionarios($event)"></ion-searchbar>
     <ion-list inset>
-        <button ion-item *ngFor="let funcionario of currentFuncionarios" (click)="funcionarioSelected(funcionario.EMP_ID)">
-            <h2>{{ funcionario.EMP_ID + funcionario.FIRST_NAME+funcionario.LAST_NAME }}</h2>
+        <button ion-item *ngFor="let funcionario of currentFuncionarios" (click)="funcionarioSelected(funcionario.emp_id)">
+            <h2>{{ funcionario.emp_id}}</h2>
+            <h2>{{funcionario.first_name}} {{funcionario.last_name}}</h2> 
+            <h2>{{funcionario.title}}</h2>
           </button>
     </ion-list>
 </ion-content>
