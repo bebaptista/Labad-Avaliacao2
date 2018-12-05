@@ -57,9 +57,9 @@ app.get("/departamentos/:id/funcionarios",function(req,res){
 app.get("/departamentos/:id/funcionarios/:func_id/contas", function(req,res){
     let identificador_funcionario = req.params.func_id;
     //let sql = "SELECT account_id, avail_balance, pending_balance, status from account WHERE open_emp_id="+identificador_funcionario+"";
-    let sql="SELECT account.account_id, account.avail_balance, account.pending_balance, account.status, customer.cust_id, customer.cust_type_cd, individual.first_name, individual.last_name FROM account INNER JOIN customer ON account.cust_id=customer.cust_id INNER JOIN individual ON customer.cust_id=individual.cust_id WHERE open_emp_id="+identificador_funcionario+""
+    let sql="SELECT account.product_cd, account.account_id, account.avail_balance, account.pending_balance, account.status, customer.cust_id, customer.cust_type_cd, individual.first_name, individual.last_name FROM account INNER JOIN customer ON account.cust_id=customer.cust_id INNER JOIN individual ON customer.cust_id=individual.cust_id WHERE open_emp_id="+identificador_funcionario+""
             +" UNION "
-            +"SELECT account.account_id, account.avail_balance, account.pending_balance, account.status, customer.cust_id, customer.cust_type_cd, business.name, business.state_id FROM account INNER JOIN customer ON account.cust_id=customer.cust_id INNER JOIN business ON customer.cust_id=business.cust_id WHERE open_emp_id="+identificador_funcionario+"";
+            +"SELECT account.product_cd, account.account_id, account.avail_balance, account.pending_balance, account.status, customer.cust_id, customer.cust_type_cd, business.name, business.state_id FROM account INNER JOIN customer ON account.cust_id=customer.cust_id INNER JOIN business ON customer.cust_id=business.cust_id WHERE open_emp_id="+identificador_funcionario+"";
     con.query(sql, function(err,result,fields){
         if(err) throw err;
         res.send(result);

@@ -11,4 +11,5 @@ export interface Conta {
     cust_type_cd: String;
     first_name: String;
     last_name: String;
+    product_cd: String;
 }

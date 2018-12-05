@@ -15,8 +15,9 @@
 
 <ion-content padding>
     <ion-list inset>
+      <h2 item-content>Funcionarios</h2>
         <button ion-item *ngFor="let funcionario of currentFuncionarios" (click)="funcionarioSelected(funcionario.emp_id)">
-            <h2>{{ funcionario.emp_id}}</h2>
+            <h2>ID: {{ funcionario.emp_id}}</h2>
             <h2>{{funcionario.first_name}} {{funcionario.last_name}}</h2> 
             <h2>{{funcionario.title}}</h2>
           </button>

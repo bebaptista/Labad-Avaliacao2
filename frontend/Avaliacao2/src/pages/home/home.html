@@ -8,6 +8,7 @@
 
 <ion-content padding>
   <ion-list inset>
+      <h2 item-content>Departamentos</h2>
       <button ion-item *ngFor="let departamento of currentDepartamentos" (click)="departamentoSelected(departamento.dept_id)">
           <h2>{{ departamento.dept_id}}</h2><h2 item-end>{{departamento.name }}</h2>
         </button>
